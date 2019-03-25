@@ -17,7 +17,7 @@ chat-spaceにおける必要なデータベースを作成する
 - has_many :messages
 - has_many :members
 
-## membersテーブル(middle table)
+## membersテーブル(中間テーブル)
 
 |Column|Type|Options|
 |------|----|-------|
