@@ -1,24 +1,55 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# What
+chat-spaceにおける必要なデータベースを作成する
 
-Things you may want to cover:
+# Why
+サービス行う際に必要なデータベースを作る必要があるから
 
-* Ruby version
+## usersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|integer|index: true, null: false, unique: true|
+|mail|string|null: false, unique: true|
 
-* System dependencies
+### Association
+- has_many groups, through: :members
+- has_many :messages
+- has_many :members
 
-* Configuration
+## groupsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|index: true, null: false, foreign_key: true|
+|massage_id|string|null: false, foreign_key: true|
 
-* Database creation
+### Association
+- has_many :members
+- has_many :users, through: :members
+- has_many :messages, through: :members
 
-* Database initialization
+## membersテーブル(middle table)
 
-* How to run the test suite
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+### Association
+- belongs_to :group
+- belongs_to :user
 
-* ...
+## massagesテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|body|text|null: false, foreign_key: true|
+|image|string|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
+|user_id|integer|null: false, foreign_key: true|
+
+### Asscociation
+- has_many :members
+- has_many :users, through: :members
+- has_many :groups, through: :members
