@@ -1,5 +1,3 @@
-# README
-
 # What
 chat-spaceにおける必要なデータベースを作成する
 
@@ -13,9 +11,20 @@ chat-spaceにおける必要なデータベースを作成する
 |mail|string|null: false, unique: true|
 
 ### Association
-- has_many groups, through: members
+- has_many groups, through: :members
 - has_many :messages
 - has_many :members
+
+## groupsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|index: true, null: false, foreign_key: true|
+|massage_id|string|null: false, foreign_key: true|
+
+### Association
+- has_many :members
+- has_many :users, through: :members
+- has_many :messages, through: :members
 
 ## membersテーブル(中間テーブル)
 
@@ -39,5 +48,7 @@ chat-spaceにおける必要なデータベースを作成する
 |user_id|integer|null: false, foreign_key: true|
 
 ### Asscociation
-- has_many :mambers
-- has_many :users through members
+- has_many :members
+- has_many :users, through: :members
+- has_many :groups, through: :members
+
