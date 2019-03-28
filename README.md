@@ -18,8 +18,8 @@ chat-spaceにおける必要なデータベースを作成する
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|index: true, null: false, foreign_key: true|
-|massage_id|string|null: false, foreign_key: true|
+|user_id|integer|index: true, null: false|
+|massage_id|string|null: false|
 
 ### Association
 - has_many :members
@@ -42,8 +42,8 @@ chat-spaceにおける必要なデータベースを作成する
 
 |Column|Type|Options|
 |------|----|-------|
-|body|text|null: false, foreign_key: true|
-|image|string|null: false, foreign_key: true|
+|body|text|null: false|
+|image|string|null: false|
 |group_id|integer|null: false, foreign_key: true|
 |user_id|integer|null: false, foreign_key: true|
 
