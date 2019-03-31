@@ -13,7 +13,7 @@ chat-spaceにおける必要なデータベースを作成する
 ### Association
 - has_many :messages
 - has_many :members
-- has_many groups, through: :members
+- has_many :groups, through: :members
 
 ## groupsテーブル
 
