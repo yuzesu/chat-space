@@ -1,9 +1,3 @@
-# What
-chat-spaceにおける必要なデータベースを作成する
-
-# Why
-サービス行う際に必要なデータベースを作る必要があるから
-
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -29,8 +23,8 @@ chat-spaceにおける必要なデータベースを作成する
 ## membersテーブル(memo:middle_table)
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
+|group_id|references|null: false, foreign_key: true|
 
 ### Assciation
 - belongs_to :user
@@ -42,8 +36,8 @@ chat-spaceにおける必要なデータベースを作成する
 |------|----|-------|
 |body|text||
 |image|string||
-|group_id|integer| foreign_key: true|
-|user_id|integer| foreign_key: true|
+|group_id|references| foreign_key: true|
+|user_id|references| foreign_key: true|
 
 ### Asscociation
 - belongs_to :user
