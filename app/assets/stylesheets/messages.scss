@@ -1,0 +1,149 @@
+html, body {
+  height: 100%;
+}
+
+.chatspace{
+  height: 100%;
+  &__side {
+    float :left;
+    background-color: #2f3e51;
+    height: 100%;
+    width: 300px;
+    &__top {
+      padding-left: 20px;
+      height:100px;
+      background-color: #253141;
+      position: relative;
+      &__name{
+        height: 20px;
+        font-size: 15px;
+        color: #FFFFFF;
+        font-weight: bold;
+        padding-top: 35px;
+      }
+      &__awesomebox{
+        height: 20px;
+        width: 50px;
+        top: 35px;
+        right: 20px;
+        position: absolute;
+        .fa.fa-pencil-square-o{
+          font-size: 20px;
+          float: left;
+          color: white;
+        }
+        .fa.fa-cog{
+          font-size: 20px;
+          float: right;
+          color: white;
+        }
+      }
+    }
+    &__bottom{
+      padding-left: 20px;
+      &__name1{
+        font-size: 15px;
+        color: #FFFFFF;
+        padding-top: 20px;
+      }
+      &__name2{
+        font-size: 15px;
+        color: #FFFFFF;
+        padding-top: 20px;
+      }
+    }
+  }
+  &__main{
+    float:right;
+    height: 100%;
+    width: calc(100% - 300px);
+    background-color: #fafafa;
+    &__top{
+      height: 100px;
+      border-bottom: 1px solid #eeeeee;
+      background-color: white;
+      &__left{
+        font-size: 20px;
+        color: #333333;
+        padding: 35px 0px 0px 40px;
+        width:300px;
+        float: left;
+        &__character{
+          font-size:20px;
+        }
+        &__member{
+          float:left;
+          font-size: 12px;
+          padding-top: 16px;
+          color: #999999;
+        }
+      }
+      &__right{
+        &__editbox{
+          width: 80px;
+          margin-top: 28px;
+          height:40px;
+          margin-right: 40px;
+          float: right;
+          position: relative;
+          &__edit{
+            color: #0099e3;
+            border: 1px solid #0099e3;
+            text-align: center;
+            height: 32px;
+            padding-top:10px;
+          }
+        }
+      }
+    }
+    &__bottom{
+      &__top1{
+        font-size: 16px;
+        padding: 46px 0 0 40px;
+        &__dating{
+          color: #999999;
+          font-size: 12px;
+        }
+      }
+      &__top2{
+        font-size: 14px;
+        padding: 10px 0 0 40px;
+      }
+      &__message{
+        background-color: #808080;
+        position: fixed;
+        bottom: 0;
+        height: 90px;
+        width: calc(100% - 300px);
+        &__box{
+          background-color: white;
+          width: 800px;
+          height: 50px;
+          margin: 20px 0px 15px 40px;
+          float: left;
+          .fa.fa-file-picture-o{
+            float: right;
+            margin: 15px 0px 15px 0px;
+          }
+          &__type{
+            color: #a5a5a5;
+            font-size: 16px;
+            margin: 12px 0px 0px 10px;
+          }
+        }
+        &__sendbox {
+          height: 50px;
+          width: 85px;
+          margin: 20px 40px 0px 10px;
+          background-color: #38AEF0;
+          text-align: center;
+          float: right;
+          &__sendbutton {
+            padding: 15px 0px 0px 10px;
+            color: white;
+          }
+        }
+      }
+    }
+  }
+}
