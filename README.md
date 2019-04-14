@@ -1,24 +1,51 @@
-# README
+# What
+chat-spaceにおける必要なデータベースを作成する
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Why
+サービス行う際に必要なデータベースを作る必要があるから
 
-Things you may want to cover:
+## usersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|index: true, null: false, unique: true|
+|mail|string|null: false, unique: true|
 
-* Ruby version
+### Association
+- has_many :messages
+- has_many :members
+- has_many :groups, through: :members
 
-* System dependencies
+## groupsテーブル
 
-* Configuration
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
 
-* Database creation
+### Association
+- has_many :messages
+- has_many :members
+- has_many :users, through: :members
 
-* Database initialization
+## membersテーブル(memo:middle_table)
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
 
-* How to run the test suite
+### Assciation
+- belongs_to :user
+- belongs_to :group
 
-* Services (job queues, cache servers, search engines, etc.)
+## massagesテーブル
 
-* Deployment instructions
+|Column|Type|Options|
+|------|----|-------|
+|body|text||
+|image|string||
+|group_id|integer| foreign_key: true|
+|user_id|integer| foreign_key: true|
 
-* ...
+### Asscociation
+- belongs_to :user
+- belongs_to :group
+
