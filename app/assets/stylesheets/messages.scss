@@ -46,6 +46,11 @@ html, body {
         color: #FFFFFF;
         padding-top: 20px;
       }
+      &__name2{
+        font-size: 15px;
+        color: #FFFFFF;
+        padding-top: 20px;
+      }
     }
   }
   &__main{
@@ -92,7 +97,7 @@ html, body {
       }
     }
     &__bottom{
-      &__top1{
+      &__top{
         font-size: 16px;
         padding: 46px 0 0 40px;
         &__dating{
@@ -100,7 +105,7 @@ html, body {
           font-size: 12px;
         }
       }
-      &__top2{
+      &__talk{
         font-size: 14px;
         padding: 10px 0 0 40px;
       }
