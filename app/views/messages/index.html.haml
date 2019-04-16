@@ -1,33 +1,42 @@
 .chatspace
-  .chatspace__side
-    .chatspace__side__top
-      %p.chatspace__side__top__name 大橋
-      .chatspace__side__top__awesomebox
+  .chatspace__side_bar
+    .chatspace__side_bar__side_header
+      %p.chatspace__side_bar__side_header__user_name ohashi
+
+      .chatspace__side_bar__side_header__awesomebox
         %i.fa.fa-pencil-square-o
         %i.fa.fa-cog
-    .chatspace__side__bottom
-      %p.chatspace__side__bottom__name sample1グループ
-      %p.chatspace__side__bottom__name sample2グループ
 
-  .chatspace__main
-    .chatspace__main__top
-      .chatspace__main__top__left
-        .chatspace__main__top__left__character sampleグループ
-        .chatspace__main__top__left__member Member
+    .chatspace__side_bar__side_footer
+      %p.chatspace__side_bar__side_footer__group sample1グループ
+      %p.chatspace__side_bar__side_footer__message こんにちは
+      %p.chatspace__side_bar__side_footer__group sample2グループ
+      %p.chatspace__side_bar__side_footer__message こんばんは
 
-      .chatspace__main__top__right
-        .chatspace__main__top__right__editbox
-          .chatspace__main__top__right__editbox__edit Edit
 
-    .chatspace__main__bottom
-      %p.chatspace__main__bottom__top
-        test-user
-        %span.chatspace__main__bottom__top__dating 2019.4.1
-      %p.chatspace__main__bottom__talk test
+  .chatspace__main_contents
+    .chatspace__main_contents__header
+      .chatspace__main_contents__header__header_group
+        sample
+      .chatspace__main_contents__header__header_member Member : ohashi
 
-      .chatspace__main__bottom__message
-        .chatspace__main__bottom__message__box
-          %i.fa.fa-file-picture-o
-          %p.chatspace__main__bottom__message__box__type type a message
-        .chatspace__main__bottom__message__sendbox
-          %p.chatspace__main__bottom__message__sendbutton Send
+      .chatspace__main_contents__header__edit Edit
+
+    .chatspace__main_contents__chat_area
+      %p.chatspace__main_contents__chat_area__character
+        sample1グループ
+        %span.chatspace__main_contents__chat_area__character__date 2019/00/00
+      %p.chatspace__main_contents__chat_area__message こんばんは
+      %p.chatspace__main_contents__chat_area__character
+        oohashi
+        %span.chatspace__main_contents__chat_area__character__date 2019/00/00
+        %p.chatspace__main_contents__chat_area__message こんばんは
+
+    .chatspace__main_contents__footer
+      .chatspace__main_contents__footer__chatbox
+        %i.fa.fa-file-picture-o
+        %p.chatspace__main_contents__footer__chatbox__type type a message
+      .chatspace__main_contents__footer__sendbox
+        %p.chatspace__main_contents__footer__sendbox__sendbutton Send
+
+
