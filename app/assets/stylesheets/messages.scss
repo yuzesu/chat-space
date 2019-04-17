@@ -1,0 +1,153 @@
+html, body {
+  height: 100%;
+}
+
+.chatspace {
+  height: 100%;
+
+  &__side_bar {
+    float :left;
+    background-color: #2f3e51;
+    height: 100%;
+    width: 300px;                 //全体の幅は300px
+
+    &__side_header{
+        padding-left: 20px; //ここで左に20ずらす。
+        padding-right: 20px;
+        height: 100px;
+        background-color: #253141;
+        position: relative;
+        &__user_name{
+          color: #FFFFFF;
+          padding-top: 35px;  //残り高さ65px
+          font-weight: bold;
+          font-size: 16px;
+          width: 200px;         //300-20-200=80px 残り幅
+        }
+        &__awesomebox{
+          height: 20px;
+          width: 50px;
+          position: absolute;
+          top: 35px;         //ユーザnameと同じ位置確認
+          right: 20px;
+          .fa.fa-pencil-square-o {
+          font-size: 18px;
+          color: white;
+        }
+        .fa.fa-cog {
+          font-size: 18px;
+          color: white;
+        }
+      }
+    }
+
+    &__side_footer{
+      padding-left: 20px;
+      &__group{
+        font-size: 15px;
+        color: #FFFFFF;
+        padding-top:20px;
+        font-weight: bold;
+      }
+      &__message{
+        font-size: 11px;
+        font-weight: bold;
+        color: #FFFFFF;
+        padding-top: 5px;
+      }
+    }
+  }
+
+  &__main_contents{
+    float: right;
+    background-color: #f8f8f8;
+    width: calc(100vw - 300px);
+    height: 100%;
+    &__header{
+      padding-left: 40px;
+      height: 100px; //side_headerと同じ高さ
+      border-bottom: 1px solid #eeeeee;
+
+      background-color: white;
+      &__header_group{
+        padding-top: 35px;  //user_nameと同じ高さ
+        font-size:20px;
+        color: #333333;
+      }
+      &__header_member{
+        font-size: 12px;
+        color: #999999;
+        padding-top: 15px;
+      }
+      &__edit{
+        color: #38AEF0;
+        float: right;
+        border: 1px solid #0099e3;
+        position: absolute;
+        right: 40px;
+        padding: 10px 20px 10px 20px;
+        top: 28px;
+      }
+    }
+
+    &__chat_area{
+      padding: 46px 0px 0px 40px;
+      &__character{
+        font-size: 16px;
+        font-weight: bold;
+        color: #434A54;
+        &__date{
+        font-size: 12px;
+        color: #999999;
+        padding-left: 10px;
+        }
+      }
+      &__message{
+        font-size: 14px;
+        color: #434A54;
+        padding: 10px 0px 40px 0px;
+      }
+    }
+
+    &__footer{
+      bottom: 0px;
+      position: fixed;
+      background-color: #DCDCDC;
+      width: calc(100vw - 300px);
+      height: 90px;
+      &__chatbox{
+        height: 50px;
+        width: 70vw;
+        border: none;
+        margin: 20px 15px 10px 40px;
+        line-height: 16px;
+        font-size: 16px;
+        float: left;
+        background-color: white;
+        .fa.fa-file-picture-o{
+          float: right;
+          margin: 15px 10px 0 10px;
+          font-size: 20px;
+        }
+        &__type{
+          padding-top: 15px;
+          padding-left: 10px;
+          color: #a5a5a5;
+          font-size: 16px;
+          }
+        }
+        &__sendbox{
+          height: 50px;
+          width: 85px;
+          margin: 20px 40px 0px 0px;
+          background-color: #38AEF0;
+          text-align: center;
+          float: right;
+          &__sendbutton{
+            padding: 10px 20px 10px 20px;
+            color: white;
+        }
+      }
+    }
+  }
+}
