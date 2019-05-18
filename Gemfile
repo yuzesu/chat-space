@@ -59,3 +59,7 @@ gem "font-awesome-rails"
 gem 'font-awesome-sass'
 
 gem 'devise'
+gem 'carrierwave'
+#画像のアップロード、表示するためのgem
+gem 'mini_magick'
+#画像のリサイズするためのgem
