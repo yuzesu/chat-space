@@ -4,7 +4,7 @@ class MessagesController < ApplicationController
   def index
     @message = Message.new 
     # インスタンス化
-    @messages = @group.messages.include(:user)
+    @messages = @group.messages.includes(:user)
     #n+1問題の解消
   end
 

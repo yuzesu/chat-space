@@ -1,42 +1,45 @@
 .chatspace
-  .chatspace__side_bar
-    .chatspace__side_bar__side_header
-      %p.chatspace__side_bar__side_header__user_name ohashi
+  .side-bar
+    .header
+      %h3.header__name
+        = current_user.name
+      %ul.header__lists
+        %li.list
+          = link_to new_group_path do
+            = fa_icon 'pencil-square-o', class: 'icon'
+        %li.list
+          = link_to edit_user_path(current_user) do
+            = fa_icon 'cog', class: 'icon'
+    
+    .groups
+      - current_user.groups.each do |group|
+        .group
+          = link_to group_messages_path(group) do
+            .group__name
+              = group.name
+            .group__message
+            -# メッセージはまだありません。 -# .headerまでは_side_barと同じため、後に部分テンプレート化
 
-      .chatspace__side_bar__side_header__awesomebox
-        %i.fa.fa-pencil-square-o
-        %i.fa.fa-cog
+  .main_contents
+    .main-header
+      .left-header
+        %span.name sample
+        %span.edit Edit
+        %p.member Member : ohashi
+      
+    .message_area
+      %p.character sample1グループ
+      %span.date 2019/00/00
+      %p.message こんばんは
+      %p.character oohashi
+      %span.date 2019/00/00
+      %p.message こんばんは
 
-    .chatspace__side_bar__side_footer
-      %p.chatspace__side_bar__side_footer__group sample1グループ
-      %p.chatspace__side_bar__side_footer__message こんにちは
-      %p.chatspace__side_bar__side_footer__group sample2グループ
-      %p.chatspace__side_bar__side_footer__message こんばんは
-
-
-  .chatspace__main_contents
-    .chatspace__main_contents__header
-      .chatspace__main_contents__header__header_group
-        sample
-      .chatspace__main_contents__header__header_member Member : ohashi
-
-      .chatspace__main_contents__header__edit Edit
-
-    .chatspace__main_contents__chat_area
-      %p.chatspace__main_contents__chat_area__character
-        sample1グループ
-        %span.chatspace__main_contents__chat_area__character__date 2019/00/00
-      %p.chatspace__main_contents__chat_area__message こんばんは
-      %p.chatspace__main_contents__chat_area__character
-        oohashi
-        %span.chatspace__main_contents__chat_area__character__date 2019/00/00
-        %p.chatspace__main_contents__chat_area__message こんばんは
-
-    .chatspace__main_contents__footer
-      .chatspace__main_contents__footer__chatbox
-        %i.fa.fa-file-picture-o
-        %p.chatspace__main_contents__footer__chatbox__type type a message
-      .chatspace__main_contents__footer__sendbox
-        %p.chatspace__main_contents__footer__sendbox__sendbutton Send
-
-
+    .message_form
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'message_form__chat', placeholder: 'type a message'
+        .message_form__mask
+          = f.label :image, class: 'message_form__mask__image' do
+            = fa_icon 'picture-o', class: 'icon'
+            = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'message_form__submit'
