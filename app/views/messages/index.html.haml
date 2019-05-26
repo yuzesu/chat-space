@@ -18,22 +18,28 @@
             .group__name
               = group.name
             .group__message
-            -# メッセージはまだありません。 -# .headerまでは_side_barと同じため、後に部分テンプレート化
+              = group.show_last_message
+            -#  # .headerまでは_side_barと同じため、後に部分テンプレート化
 
   .main_contents
     .main-header
       .left-header
-        %span.name sample
-        %span.edit Edit
-        %p.member Member : ohashi
-      
+        %span.name 
+          = @group.name
+        %span.edit 
+          = link_to 'Edit' , edit_group_path(@group)
+        %p.member 
+          Members :
+          - @group.users.each do |user|
+            = user.name
     .message_area
-      %p.character sample1グループ
-      %span.date 2019/00/00
-      %p.message こんばんは
-      %p.character oohashi
-      %span.date 2019/00/00
-      %p.message こんばんは
+      = render @messages
+      -# %p.character sample1グループ
+      -# %span.date 2019/00/00
+      -# %p.message こんばんは
+      -# %p.character oohashi
+      -# %span.date 2019/00/00
+      -# %p.message こんばんは
 
     .message_form
       = form_for [@group, @message] do |f|

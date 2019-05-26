@@ -99,18 +99,17 @@ $bule: #0099e3;
 
   .message_area {
     padding: 46px 0px 0px 40px;
-
+    height: calc(100% - 190px);
     p.character {
       font-size: 16px;
       font-weight: bold;
       color: #434A54;
-    }
 
-    span.date {
-      font-size: 12px;
-      color: #999999;
+      span.date {
+        font-size: 12px;
+        color: #999999;
+      }
     }
-
     p.message {
       font-size: 14px;
       color: #434A54;
