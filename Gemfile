@@ -68,3 +68,6 @@ gem 'carrierwave'
 #画像のアップロード、表示するためのgem
 gem 'mini_magick'
 #画像のリサイズするためのgem
+gem 'jquery-rails'
+
+gem 'jquery-turbolinks'
