@@ -42,7 +42,7 @@
       -# %p.message こんばんは
 
     .message_form
-      = form_for [@group, @message] do |f|
+      = form_for [@group, @message],html: {id: 'new_form'} do |f|
         = f.text_field :content, class: 'message_form__chat', placeholder: 'type a message'
         .message_form__mask
           = f.label :image, class: 'message_form__mask__image' do

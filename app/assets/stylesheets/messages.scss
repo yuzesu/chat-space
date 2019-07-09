@@ -65,7 +65,7 @@ $bule: #0099e3;
 .main_contents {
   width: calc(100vw - 300px);
   float: left;
-
+  height: 100vw;
   .main-header {
     height: 100px; //side_headerと同じ高さ
     border-bottom: 1px solid #eeeeee;
@@ -99,7 +99,9 @@ $bule: #0099e3;
 
   .message_area {
     padding: 46px 0px 0px 40px;
-    height: calc(100% - 190px);
+    height: calc(100vh - 250px);
+    position: relative;
+    overflow: scroll;
     p.character {
       font-size: 16px;
       font-weight: bold;
