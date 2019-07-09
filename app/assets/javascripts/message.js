@@ -1,14 +1,8 @@
 $(function(message){
 
   function buildHTML(message){
-    // var html = `<div class="message_area">
-    //上記まで載せるとviewが崩れる
-    if(message.image == null){
-      var imagehtml = "";
-    }else{
-      var imagehtml = `<img src = "${message.image}" class="message_content" >`
-    }
-    //var imagehtml = message.image == null ? "" : `<img src="${message.image}" class="message_content">`
+    
+    var imagehtml = message.image == null ? "" : `<img src="${message.image}" class="message_content">`
     var html =  `<div class="messages">
                     <p class="character">
                       ${message.name}
@@ -27,7 +21,6 @@ $(function(message){
   }
 
   function getScroll() {
-    // console.log("this")
     $('.message_area').animate({ scrollTop: $('.message_area')[0].scrollHeight });
   }
 
@@ -45,11 +38,10 @@ $(function(message){
       contentType: false
     })
     .done(function(data){
-      // console.log(data)
       getScroll();
       var html = buildHTML(data);
       $('.message_area').append(html);
-      $('.message_form__chat').val("");
+      $('#new_form')[0].reset("");
       $('.message_form__submit').prop('disabled', false);
     })
     .fail(function(){
