@@ -64,8 +64,8 @@ $bule: #0099e3;
 
 .main_contents {
   width: calc(100vw - 300px);
-  float: left;
-  height: 100vw;
+  float: right;
+
   .main-header {
     height: 100px; //side_headerと同じ高さ
     border-bottom: 1px solid #eeeeee;
@@ -78,6 +78,7 @@ $bule: #0099e3;
       span.name {
         font-size: 20px;
         color: #333333;
+        float: left;
       }
 
       span.edit {
@@ -133,6 +134,7 @@ $bule: #0099e3;
       float: left;
       height: 50px;
       width: calc(100% - 140px);
+      padding-left: 5px;
       
     }
 
