@@ -4,9 +4,6 @@ lock "~> 3.11.0"
 set :application, "chat-space"
 set :repo_url, "git@github.com:yuzesu/chat-space.git"
 
-# どのリポジトリからアプリをpullするかを指定する
-set :repo_url,  'git@github.com:<Githubのユーザー名>/<レポジトリ名>.git'
-
 # バージョンが変わっても共通で参照するディレクトリを指定
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads')
 
